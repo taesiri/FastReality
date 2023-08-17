@@ -2296,15 +2296,21 @@ LOCAL USERNAME : $tempusername
 LOCAL PASSWORD : $temppassword
 "
 
+# Display the VLESS config URL
+serverconfig="vless://$generateduuid@$vpsip:443?security=reality&encryption=none&pbk=$publickey&headerType=none&fp=randomized&type=tcp&flow=xtls-rprx-vision&sni=www.google-analytics.com&sid=$shortid#$hostname"
+echo "VLESS Config URL:"
+echo "$serverconfig"
+
+# Display the path to the config.json file
+echo "Path to config.json:"
+echo "$configfile"
+
 echo "=========================================================================
 |                               QRCODE                                  |
 ========================================================================="
-
-serverconfig="vless://$generateduuid@$vpsip:443?security=reality&encryption=none&pbk=$publickey&headerType=none&fp=randomized&type=tcp&flow=xtls-rprx-vision&sni=www.google-analytics.com&sid=$shortid#$hostname"
 
 # We output a qrcode to ease connection
 qrencode -t ansiutf8 $serverconfig
 
 # We now save the xray core version we have installed
 echo "$xrayversion" > /FastReality/xrayversion.txt
-
