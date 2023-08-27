@@ -261,10 +261,10 @@ cat > $configfile << EOL
             "security":"reality",
             "realitySettings":{
                "show":false,
-               "dest":"www.samsung.com:443",
+               "dest":"www.microsoft.com:443",
                "xver":0,
                "serverNames":[
-                  "www.samsung.com"
+                  "www.microsoft.com"
                ],
                "privateKey":"$privatekey",
                "minClientVer":"1.8.0",
@@ -2286,7 +2286,7 @@ ENCRYPTION : none
 NETWORK : tcp
 HEAD TYPE : none
 TLS : reality
-SNI : www.samsung.com
+SNI : www.microsoft.com
 FINGERPRINT : randomized
 PUBLIC KEY : $publickey
 SHORT ID : $shortid
@@ -2297,7 +2297,7 @@ LOCAL PASSWORD : $temppassword
 "
 
 # Display the VLESS config URL
-serverconfig="vless://$generateduuid@$vpsip:443?security=reality&encryption=none&pbk=$publickey&headerType=none&fp=randomized&type=tcp&flow=xtls-rprx-vision&sni=www.samsung.com&sid=$shortid#$hostname"
+serverconfig="vless://$generateduuid@$vpsip:443?security=reality&encryption=none&pbk=$publickey&headerType=none&fp=randomized&type=tcp&flow=xtls-rprx-vision&sni=www.microsoft.com&sid=$shortid#$hostname"
 echo "VLESS Config URL:"
 echo "$serverconfig"
 
@@ -2397,7 +2397,7 @@ cat > $clientconfigpath << EOL
         "network": "tcp",
         "security": "reality",
         "realitySettings": {
-          "serverName": "www.samsung.com",
+          "serverName": "www.microsoft.com",
           "fingerprint": "randomized",
           "show": false,
           "publicKey": "$publickey",
