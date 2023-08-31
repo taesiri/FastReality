@@ -30,10 +30,10 @@ def ssh_execute_and_fetch_file(ip, command, ssh_key_path, local_save_path):
 
 if __name__ == "__main__":
     
-    IPs = ["45.76.85.137", "104.238.177.139", "95.179.241.101"] 
+    IPs = ["1.1.1.1", "1.2.3.4"] 
     
     command = "sudo curl -s https://raw.githubusercontent.com/taesiri/FastReality/master/Reality.sh | bash"
-    ssh_key_path = "/Users/taesiri/.ssh/id_rsa"  # Replace with your ssh key path
+    ssh_key_path = "~/.ssh/id_rsa"  # Replace with your ssh key path
     local_save_path = "./"  # Replace with desired local save path
 
     for ip in IPs:
