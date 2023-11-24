@@ -261,10 +261,10 @@ cat > $configfile << EOL
             "security":"reality",
             "realitySettings":{
                "show":false,
-               "dest":"ntservicepack.microsoft.com:443",
+               "dest":"windowsupdate.com:443",
                "xver":0,
                "serverNames":[
-                  "ntservicepack.microsoft.com"
+                  "windowsupdate.com"
                ],
                "privateKey":"$privatekey",
                "minClientVer":"1.8.0",
@@ -2286,7 +2286,7 @@ ENCRYPTION : none
 NETWORK : TCP
 HEAD TYPE : none
 TLS : reality
-SNI : ntservicepack.microsoft.com
+SNI : windowsupdate.com
 FINGERPRINT : randomized
 PUBLIC KEY : $publickey
 SHORT ID : $shortid
@@ -2297,7 +2297,7 @@ LOCAL PASSWORD : $temppassword
 "
 
 # Display the VLESS config URL
-serverconfig="vless://$generateduuid@$vpsip:443?security=reality&encryption=none&pbk=$publickey&headerType=none&fp=randomized&type=tcp&flow=xtls-rprx-vision&sni=ntservicepack.microsoft.com&sid=$shortid#$hostname"
+serverconfig="vless://$generateduuid@$vpsip:443?security=reality&encryption=none&pbk=$publickey&headerType=none&fp=randomized&type=tcp&flow=xtls-rprx-vision&sni=windowsupdate.com&sid=$shortid#$hostname"
 echo "VLESS Config URL:"
 echo "$serverconfig"
 
@@ -2397,7 +2397,7 @@ cat > $clientconfigpath << EOL
         "network": "tcp",
         "security": "reality",
         "realitySettings": {
-          "serverName": "ntservicepack.microsoft.com",
+          "serverName": "windowsupdate.com",
           "fingerprint": "randomized",
           "show": false,
           "publicKey": "$publickey",
