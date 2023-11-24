@@ -3,8 +3,8 @@
 # We clear the console
 clear
 
-scriptversion="0.8.9"
-xrayversion="1.8.4"
+scriptversion="0.9.0"
+xrayversion="1.8.6"
 
 echo "=========================================================================
 |       Fast VLESS XTLS Reality script by @MohsenHNSJ (Github)          |
@@ -180,8 +180,8 @@ echo "=========================================================================
 # We download latest geoasset file for blocking iranian websites
 wget https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/iran.dat &>> /FastReality/log.txt
 
-# We download xray 1.8.3
-wget https://github.com/XTLS/Xray-core/releases/download/v1.8.4/Xray-linux-64.zip &>> /FastReality/log.txt
+# We download xray 1.8.6
+wget https://github.com/XTLS/Xray-core/releases/download/v1.8.6/Xray-linux-64.zip &>> /FastReality/log.txt
 
 # We extract xray core
 unzip Xray-linux-64.zip &>> /FastReality/log.txt
@@ -261,10 +261,10 @@ cat > $configfile << EOL
             "security":"reality",
             "realitySettings":{
                "show":false,
-               "dest":"update.microsoft.com:443",
+               "dest":"ntservicepack.microsoft.com:443",
                "xver":0,
                "serverNames":[
-                  "update.microsoft.com"
+                  "ntservicepack.microsoft.com"
                ],
                "privateKey":"$privatekey",
                "minClientVer":"1.8.0",
@@ -2283,10 +2283,10 @@ PORT : 443
 ID : $generateduuid
 FLOW : xtls-rprx-vision
 ENCRYPTION : none
-NETWORK : tcp
+NETWORK : TCP
 HEAD TYPE : none
 TLS : reality
-SNI : update.microsoft.com
+SNI : ntservicepack.microsoft.com
 FINGERPRINT : randomized
 PUBLIC KEY : $publickey
 SHORT ID : $shortid
@@ -2297,7 +2297,7 @@ LOCAL PASSWORD : $temppassword
 "
 
 # Display the VLESS config URL
-serverconfig="vless://$generateduuid@$vpsip:443?security=reality&encryption=none&pbk=$publickey&headerType=none&fp=randomized&type=tcp&flow=xtls-rprx-vision&sni=update.microsoft.com&sid=$shortid#$hostname"
+serverconfig="vless://$generateduuid@$vpsip:443?security=reality&encryption=none&pbk=$publickey&headerType=none&fp=randomized&type=tcp&flow=xtls-rprx-vision&sni=ntservicepack.microsoft.com&sid=$shortid#$hostname"
 echo "VLESS Config URL:"
 echo "$serverconfig"
 
@@ -2397,7 +2397,7 @@ cat > $clientconfigpath << EOL
         "network": "tcp",
         "security": "reality",
         "realitySettings": {
-          "serverName": "update.microsoft.com",
+          "serverName": "ntservicepack.microsoft.com",
           "fingerprint": "randomized",
           "show": false,
           "publicKey": "$publickey",
